@@ -12,7 +12,7 @@ var width = svgWidth - margin.left - margin.right;
 var height = svgHeight - margin.top - margin.bottom;
 
 
-// Create an SVG wrapper, append an SVG group that will hold our chart, and shift the latter by left and top margins.
+// Create an SVG wrapper
 var svg = d3.select(".chart")
   .append("svg")
   .attr("width", svgWidth)
@@ -27,11 +27,12 @@ var chartGroup = svg.append("g")
 d3.csv("trip_duration_comparison.csv", function (err, tripData) {
   if (err) throw err;
 
-  // Step 1: Parse Data/Cast as numbers
+  // Step 1: Parse Data
    // ==============================
   tripData.forEach(function (data) {
     data.bike_duration_mins = +data.bike_duration_mins;
     data.public_duration_mins = +data.public_duration_mins;
+    data.distance = +data.distance;
   });
 
   // Step 2: Create scale functions
@@ -41,7 +42,7 @@ d3.csv("trip_duration_comparison.csv", function (err, tripData) {
     .range([0, width]);
 
   var yLinearScale = d3.scaleLinear()
-    .domain([50, d3.max(tripData, d => d.frequency)])
+    .domain([0, d3.max(tripData, d => d.distance)])
     .range([height, 0]);
 
   // Step 3: Create axis functions
@@ -66,7 +67,7 @@ d3.csv("trip_duration_comparison.csv", function (err, tripData) {
   .enter()
   .append("circle")
   .attr("cx", d => xLinearScale(d.time_saved))
-  .attr("cy", d => yLinearScale(d.frequency))
+  .attr("cy", d => yLinearScale(d.distance))
   .attr("r", function(d) {return Math.sqrt(d.frequency); })
   .attr("fill", "rgb(84, 159, 224)")
   .attr("stroke", "rgb(57, 142, 219)")
@@ -105,7 +106,7 @@ d3.csv("trip_duration_comparison.csv", function (err, tripData) {
     .attr("x", 0 - (height / 2))
     .attr("dy", "1em")
     .attr("class", "axisText")
-    .text("Route Frequency (May 2018)");
+    .text("Route Distance (meters)");
 
   chartGroup.append("text")
     .attr("transform", `translate(${width/2}, ${height + margin.top - 15})`)
