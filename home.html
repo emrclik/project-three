@@ -61,8 +61,6 @@
               <li><a href="#visual4">Cluster Map</a></li>
               <li><a href="#visual2">Hourly Traffic</a></li>
               <li><a href="#visual3">Pass Type</a></li>
-			  
-			  
             </ul>
           </li>
           <li><a href="#team">Team</a></li>
@@ -95,15 +93,15 @@
           </div>
           <div class="row">
             <div class="col-lg-12 col-md-6">
-				<p><strong>This project represents a deep dive into bike rental data from New York’s CitiBike system, using machine learning. With CitiBike, riders 
+              <p><strong>This project represents a deep dive into bike rental data from New York’s CitiBike system, using machine learning. With CitiBike, riders 
                  can rent publically available bikes for single rides, or subscribe for long-term access. Bike rental is an integral part of New York’s 
                  transit system, and we can glean a number of insights and make predictions based on the available data.</strong></p>
 
-				<p><strong>For marketing purposes, it would be useful to have an idea just who is riding, and where they are riding to and from. Using Python’s 
+              <p><strong>For marketing purposes, it would be useful to have an idea just who is riding, and where they are riding to and from. Using Python’s 
                  SciKitLearn library we built a neural network to predict whether a rider is aged 20-29 based on the other details of their ride (duration,
                  route cluster, hour of the day, etc). The model yields 75%-85% accuracy depending on the input data.</strong></p>
                 
-				<p><strong>This is a many-layered task, and this site will take you through our data cleaning process, machine learning model, and include a few other
+              <p><strong>This is a many-layered task, and this site will take you through our data cleaning process, machine learning model, and include a few other
                  analyses that help us understand rider behavior.</strong></p>
             </div>
           </div>
@@ -125,7 +123,7 @@
       <div class="container wow fadeIn">
         <div class="section-header">
           <h3 class="section-title">Data Cleanup</h3>
-           <p class="section-description"><strong>The data we used was the <a href="https://s3.amazonaws.com/tripdata/index.html">CitiBike Trip History data</a> from May, 2018</strong></p>
+          <p class="section-description"><strong>The data we used was the <a href="https://s3.amazonaws.com/tripdata/index.html">CitiBike Trip History data</a> from May, 2018</strong></p>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
@@ -169,8 +167,6 @@
           <p class="section-description"></p>
         </div>
           <div class="row justify-content-center">
-
-
             <div class="col-lg-12 col-md-6">
               <p><strong>Regression
                 <br>
@@ -179,27 +175,11 @@
                  distribution, the data is simply too noisy to yield accurate predictions this way. Even after clustering rides, the regression’s 
                  R^2 was a measly .033 - this means that our regression was explaining just 3% of the variation in age. The process is outlined below.</strong></p>
             </div>
-			
-			
-			
-			
-			
-			
-			
-			
           </div>
-
           <div class="row">
             <div class="col-lg-4 col-md-12 offset-md-1 wow fadeInUp">
               <iframe width=900 height=500 src="https://nbviewer.jupyter.org/github/nameyeh/project-three/blob/master/CitiBike_Regression.ipynb"></iframe>
             </div>
-
-
-
-
-
-
-
           </div>
           <div class="row justify-content-center">
               <div class="col-lg-12 col-md-6">
@@ -210,28 +190,12 @@
                    coordinates describing the beginning and ending points of each trip. The plots in the Visualizations section below offer a 
                    look at where our 10 clusters fell throughout New York, as well as the distribution of 20-somethings in each cluster. The line 
                    charts give us a look at ride volume based on time of day, aggregated for weekend and weekday rides.</strong></p>
-
-
-
-
-
-
-
               </div>
-
           </div>
           <div class="row justify-content-center">
               <div class="col-lg-12 col-md-6">
                   <div class='tableauPlaceholder' id='viz1531404556387' style='position: relative'><noscript><a href='#'><img alt='Cluster Map, colored by Percentage in 20s ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CitiBike_MachineLearningSupplement&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1531404556387');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-
-
-
-
-
-
-
               </div>
-
           </div>
           <div class="row justify-content-center">
               <div class="col-lg-12 col-md-6">
@@ -240,48 +204,20 @@
                    After going back the drawing board, we moved forward with a neural network. Rather than predict age as a continuous value, neural 
                    networks predict binary outcomes where an instance must fall into one of two categories. Here, our predicted outcome will be our 
                    ‘twenties’ variable. Results improved significantly, and our model yielded ~75% accuracy when tested on our data. Check it out!</strong></p>   
-
-
-
-
-
-
-
               </div>
-
           </div>
             <div class="row">
-
               <div class="col-lg-4 col-md-12 offset-md-1 wow fadeInUp">
                 <iframe width=900 height=500 src="https://nbviewer.jupyter.org/github/nameyeh/project-three/blob/master/CitiBike_NeuralNetwork.ipynb"></iframe>
-
-
-
-
-
               </div>
             </div>
             <br>
-
-
-
-
-
-
             <div class="row">
-
-
-
-
-
-
                 <div class="col-lg-12 col-md-6">
                   <p><h3><strong>Try our model for yourself!</strong></h3></p>
                   <p><strong>Pick a month from the CitiBike data <a href="https://s3.amazonaws.com/tripdata/index.html">HERE</a>.</strong></p>
                   <p><strong>You can use <a href="/CitiBike_nn_app.py">this Python code</a> to run the model with your chosen csv.</strong></p>
 
-
-      
       </div>
     </section><!-- #portfolio -->
 
@@ -317,7 +253,7 @@
         </div>
 
       </div>
-<br>
+      <br>
       <div class="container wow fadeInUp">
         <div class="row justify-content-center">
           <div class="col-lg-12 col-md-6">
@@ -339,27 +275,20 @@
 
   </main>
 
-      
   <!--==========================
       Visualizations
     ============================-->
+   
     <section id="visual1">
         <div class="container wow fadeInUp">
             <div class="row">
             <div class="section-header">
                 <h3 class="section-title">Visualizations</h3>
             </div>
-
-
-
-
-
             </div>
         </div>
     </section>
     <section id="visual4">
-
-
         <div class="container wow fadeInUp">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
@@ -370,7 +299,6 @@
     </section>
 
     <section id="visual2">
-
         <div class="container wow fadeInUp">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
@@ -392,7 +320,7 @@
           </div>
       </div>
   </section>
-
+  
   <!--==========================
       Team Section
     ============================-->
