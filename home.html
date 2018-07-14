@@ -58,11 +58,11 @@
           <li><a href="#secondary">Secondary Analysis</a></li>
           <li class="menu-has-children"><a href="#visual1">Visualizations</a>
             <ul>
-              <li><a href="#visual1">Cluster Map</a></li>
-              <li><a href="#visual2">Hourly Traffic(weekend)</a></li>
-              <li><a href="#visual3">Hourly Traffic(weekday)</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
+              <li><a href="#visual4">Cluster Map</a></li>
+              <li><a href="#visual2">Hourly Traffic</a></li>
+              <li><a href="#visual3">Pass Type</a></li>
+			  
+			  
             </ul>
           </li>
           <li><a href="#team">Team</a></li>
@@ -95,12 +95,21 @@
           </div>
           <div class="row">
             <div class="col-lg-12 col-md-6">
-              <p>blahdhdhdhdh dhdhdhhd dhdhdhdh dhdhhdhd dhdhdh dhdhd dhdhdh dhhd hdhdhdhdhd dhhdhdhddhd dhhhdhdhdhjdshjdsh hdjsdhjshd kdshkdhas khdksajd a</p>
+				<p><strong>This project represents a deep dive into bike rental data from New York’s CitiBike system, using machine learning. With CitiBike, riders 
+                 can rent publically available bikes for single rides, or subscribe for long-term access. Bike rental is an integral part of New York’s 
+                 transit system, and we can glean a number of insights and make predictions based on the available data.</strong></p>
+
+				<p><strong>For marketing purposes, it would be useful to have an idea just who is riding, and where they are riding to and from. Using Python’s 
+                 SciKitLearn library we built a neural network to predict whether a rider is aged 20-29 based on the other details of their ride (duration,
+                 route cluster, hour of the day, etc). The model yields 75%-85% accuracy depending on the input data.</strong></p>
+                
+				<p><strong>This is a many-layered task, and this site will take you through our data cleaning process, machine learning model, and include a few other
+                 analyses that help us understand rider behavior.</strong></p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-12 col-md-6">
-              <a href="#about"><img class="center-block" width=900 height=600 src="anthony-ginsbrook-208979-unsplash.jpg" alt="" title="" /></img></a>
+              <a href="#about"><img class="center-block" width=850 height=500 src="anthony-ginsbrook-208979-unsplash.jpg" alt="" title="" /></img></a>
               <p align="center">Photo by Anthony Ginsbrook on Unsplash</p>
           </div>
         </div>
@@ -116,7 +125,7 @@
       <div class="container wow fadeIn">
         <div class="section-header">
           <h3 class="section-title">Data Cleanup</h3>
-          <p class="section-description">The data we used was the <a href="https://s3.amazonaws.com/tripdata/index.html">CitiBike Trip History data</a> from May, 2018</p>
+           <p class="section-description"><strong>The data we used was the <a href="https://s3.amazonaws.com/tripdata/index.html">CitiBike Trip History data</a> from May, 2018</strong></p>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
@@ -128,14 +137,14 @@
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
             <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
+              <div class="icon"><a href=""><i class="fa fa-desktop"></i></a></div>
               <h4 class="title"><a href="">Step 2</a></h4>
               <p class="description">Parsed the Start Time in order to get the hour of the day on a 24 hour scale</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
             <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-paper-plane"></i></a></div>
+              <div class="icon"><a href=""><i class="fa fa-desktop"></i></a></div>
               <h4 class="title"><a href="">Step 3</a></h4>
               <p class="description">Created dummy variables for weekend/weekday rides and whether the rider was in his/her 20s</p>
             </div>
@@ -157,144 +166,122 @@
       <div class="container wow fadeInUp">
         <div class="section-header">
           <h3 class="section-title">Machine Learning</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <p class="section-description"></p>
         </div>
-        <div class="row">
+          <div class="row justify-content-center">
 
-          <div class="col-lg-12">
-            <ul id="portfolio-flters">
-              <li data-filter=".filter-app, .filter-card, .filter-logo, .filter-web" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-logo">Logo</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
+
+            <div class="col-lg-12 col-md-6">
+              <p><strong>Regression
+                <br>
+                 Sometimes, making accurate predictions boils down to choosing the right questions. In our case, our initial goal was to build a
+                 regression that would guess rider age based on their ride details. Despite our visuals demonstrating clear trends in age 
+                 distribution, the data is simply too noisy to yield accurate predictions this way. Even after clustering rides, the regression’s 
+                 R^2 was a measly .033 - this means that our regression was explaining just 3% of the variation in age. The process is outlined below.</strong></p>
+            </div>
+			
+			
+			
+			
+			
+			
+			
+			
           </div>
-        </div>
 
-        <div class="row" id="portfolio-wrapper">
-          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <a href="">
-              <img src="img/portfolio/app1.jpg" alt="">
-              <div class="details">
-                <h4>App 1</h4>
-                <span>Alored dono par</span>
+          <div class="row">
+            <div class="col-lg-4 col-md-12 offset-md-1 wow fadeInUp">
+              <iframe width=900 height=500 src="https://nbviewer.jupyter.org/github/nameyeh/project-three/blob/master/CitiBike_Regression.ipynb"></iframe>
+            </div>
+
+
+
+
+
+
+
+          </div>
+          <div class="row justify-content-center">
+              <div class="col-lg-12 col-md-6">
+                <p><strong>Clustering
+                  <br>
+                   Modeling on geographic coordinates represents a serious challenge for machine learning, since latitude and longitude have a 
+                   non-linear effect on the way humans populate the confines of the city. Instead, we’ll cluster the data into lanes: pairs of 
+                   coordinates describing the beginning and ending points of each trip. The plots in the Visualizations section below offer a 
+                   look at where our 10 clusters fell throughout New York, as well as the distribution of 20-somethings in each cluster. The line 
+                   charts give us a look at ride volume based on time of day, aggregated for weekend and weekday rides.</strong></p>
+
+
+
+
+
+
+
               </div>
-            </a>
-          </div>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-            <a href="">
-              <img src="img/portfolio/web2.jpg" alt="">
-              <div class="details">
-                <h4>Web 2</h4>
-                <span>Alored dono par</span>
+          </div>
+          <div class="row justify-content-center">
+              <div class="col-lg-12 col-md-6">
+                  <div class='tableauPlaceholder' id='viz1531404556387' style='position: relative'><noscript><a href='#'><img alt='Cluster Map, colored by Percentage in 20s ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CitiBike_MachineLearningSupplement&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1531404556387');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+
+
+
+
+
+
               </div>
-            </a>
-          </div>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <a href="">
-              <img src="img/portfolio/app3.jpg" alt="">
-              <div class="details">
-                <h4>App 3</h4>
-                <span>Alored dono par</span>
+          </div>
+          <div class="row justify-content-center">
+              <div class="col-lg-12 col-md-6">
+                <p><strong>Neural Network
+                  <br>
+                   After going back the drawing board, we moved forward with a neural network. Rather than predict age as a continuous value, neural 
+                   networks predict binary outcomes where an instance must fall into one of two categories. Here, our predicted outcome will be our 
+                   ‘twenties’ variable. Results improved significantly, and our model yielded ~75% accuracy when tested on our data. Check it out!</strong></p>   
+
+
+
+
+
+
+
               </div>
-            </a>
-          </div>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <a href="">
-              <img src="img/portfolio/card1.jpg" alt="">
-              <div class="details">
-                <h4>Card 1</h4>
-                <span>Alored dono par</span>
+          </div>
+            <div class="row">
+
+              <div class="col-lg-4 col-md-12 offset-md-1 wow fadeInUp">
+                <iframe width=900 height=500 src="https://nbviewer.jupyter.org/github/nameyeh/project-three/blob/master/CitiBike_NeuralNetwork.ipynb"></iframe>
+
+
+
+
+
               </div>
-            </a>
-          </div>
+            </div>
+            <br>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <a href="">
-              <img src="img/portfolio/card2.jpg" alt="">
-              <div class="details">
-                <h4>Card 2</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-            <a href="">
-              <img src="img/portfolio/web3.jpg" alt="">
-              <div class="details">
-                <h4>Web 3</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <a href="">
-              <img src="img/portfolio/card3.jpg" alt="">
-              <div class="details">
-                <h4>Card 3</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <a href="">
-              <img src="img/portfolio/app2.jpg" alt="">
-              <div class="details">
-                <h4>App 2</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-logo">
-            <a href="">
-              <img src="img/portfolio/logo1.jpg" alt="">
-              <div class="details">
-                <h4>Logo 1</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-logo">
-            <a href="">
-              <img src="img/portfolio/logo3.jpg" alt="">
-              <div class="details">
-                <h4>Logo 3</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
+            <div class="row">
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-            <a href="">
-              <img src="img/portfolio/web1.jpg" alt="">
-              <div class="details">
-                <h4>Web 1</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-logo">
-            <a href="">
-              <img src="img/portfolio/logo2.jpg" alt="">
-              <div class="details">
-                <h4>Logo 2</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
 
-        </div>
 
+
+
+                <div class="col-lg-12 col-md-6">
+                  <p><h3><strong>Try our model for yourself!</strong></h3></p>
+                  <p><strong>Pick a month from the CitiBike data <a href="https://s3.amazonaws.com/tripdata/index.html">HERE</a>.</strong></p>
+                  <p><strong>You can use <a href="/CitiBike_nn_app.py">this Python code</a> to run the model with your chosen csv.</strong></p>
+
+
+      
       </div>
     </section><!-- #portfolio -->
 
@@ -312,7 +299,7 @@
       <div class="container wow fadeInUp">
         <div class="row justify-content-center">
           <div class="col-lg-12 col-md-6">
-            <p>We were interested in looking into whether or not it's more time efficient for people to use CitiBike over regular New York public transit.
+            <p><strong>We were interested in looking into whether or not it's more time efficient for people to use CitiBike over regular New York public transit.
                To do this, we first analyzed our starting and ending coordinates for all bike trips taken in the month of May. We needed to determine the 
                routes that multiple users rode. Overall, we used approximately 1000 different routes that comprised 160,000 different rides. From there, we 
                used the Google Directions API to look up the transit directions given the starting and ending coordinates for each route. We were able to 
@@ -320,7 +307,7 @@
                order to get rid of any exteme outliers - either people using the bikes to go on a leisurely ride or maybe run errands or Tour de France 
                winners speeding through New York City. What we couldn't account for were factors like ease of access for CitiBikes versus public transit.
                Someone might live right next to a train stop but have to walk 10 minutes to a CitiBike station or vice versa. Nevertheless, our results show
-               that it is generally faster to use a CitiBike to get somewhere rather than public transportation. 
+               that it is generally faster to use a CitiBike to get somewhere rather than public transportation. </strong>
             </p>
           </div>
         </div>
@@ -330,48 +317,81 @@
         </div>
 
       </div>
+<br>
+      <div class="container wow fadeInUp">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 col-md-6">
+            <p><strong>We also looked into May weather to see if it had ay effect on our data. The two variables we looked at were wind speed and temperature.
+              The graph below consists of average trip duration, average temperature and average wind speed. Based on our results there isn't a clear
+              correlation between weather and bike-share usage. It would be interesting to compare different months such as July versus December. We'd expect 
+              to see more interesting results in December when bikers are dealing with cold temperatures and snow.</strong>
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-12 col-md-6">
+              <div class='tableauPlaceholder' id='viz1531590866313' style='position: relative'><noscript><a href='#'><img alt='Average Duration&#47;WindSpd&#47;Temperature Daily ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Av&#47;AvgDurationWindSpdTemperature&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='AvgDurationWindSpdTemperature&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Av&#47;AvgDurationWindSpdTemperature&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1531590866313');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        </div>
 
+      </div>
       </div>
     </section><!-- #secondary -->
 
   </main>
 
+      
   <!--==========================
       Visualizations
     ============================-->
     <section id="visual1">
         <div class="container wow fadeInUp">
+            <div class="row">
             <div class="section-header">
                 <h3 class="section-title">Visualizations</h3>
-              </div>
+            </div>
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+    <section id="visual4">
+
+
+        <div class="container wow fadeInUp">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
-                    <div class='tableauPlaceholder' id='viz1531404556387' style='position: relative'><noscript><a href='#'><img alt='Cluster Map, colored by Percentage in 20s ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CitiBike_MachineLearningSupplement&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1531404556387');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                    <div class='tableauPlaceholder' id='viz1531591559381' style='position: relative'><noscript><a href='#'><img alt='Cluster Map, colored by Percentage in 20s ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CitiBike_MachineLearningSupplement&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1531591559381');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="visual2">
+
         <div class="container wow fadeInUp">
             <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class='tableauPlaceholder' id='viz1531405857707' style='position: relative'><noscript><a href='#'><img alt='Hourly Traffic by Cluster, Weekend ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CitiBike_MachineLearningSupplement&#47;Sheet3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1531405857707');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                <div class="col-lg-6 col-md-6">
+                    <div class='tableauPlaceholder' id='viz1531590220291' style='position: relative'><noscript><a href='#'><img alt='Hourly Traffic by Cluster, Weekend ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CitiBike_MachineLearningSupplement&#47;Sheet3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1531590220291');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <div class='tableauPlaceholder' id='viz1531590249733' style='position: relative'><noscript><a href='#'><img alt='Hourly Traffic by Cluster, Weekday ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet4&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CitiBike_MachineLearningSupplement&#47;Sheet4' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet4&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1531590249733');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
                 </div>
             </div>
         </div>
     </section>
-
     <section id="visual3">
-        <div class="container wow fadeInUp">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class='tableauPlaceholder' id='viz1531406010072' style='position: relative'><noscript><a href='#'><img alt='Hourly Traffic by Cluster, Weekday ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet4&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CitiBike_MachineLearningSupplement&#47;Sheet4' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_MachineLearningSupplement&#47;Sheet4&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1531406010072');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                </div>
-            </div>
-        </div>
-    </section>
-
+      <div class="container wow fadeInUp">
+          <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class='tableauPlaceholder' id='viz1531582964973' style='position: relative'><noscript><a href='#'><img alt='PassTypeClusterMap ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cu&#47;CustomerClusters_0&#47;PassTypeClusterMap&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='views&#47;CustomerClusters_0&#47;PassTypeClusterMap?:embed=y&amp;:display_count=y' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cu&#47;CustomerClusters_0&#47;PassTypeClusterMap&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1531582964973');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+              </div>
+          </div>
+      </div>
+  </section>
 
   <!--==========================
       Team Section
